@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <%tables.forEach(function(table){%>
+        <typeAlias alias="${table.lowerCamelName}VO" type="${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO"/><%})%>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.value.mybatis.PagePlugin">
+            <property name="dialect" value="mysql"/>
+            <property name="pageSqlId" value=".*Page$"/>
+        </plugin>
+        <plugin interceptor="com.value.mybatis.CountPlugin">
+            <property name="pageSqlId" value=".*load.*"/>
+        </plugin>
+    </plugins>
+</configuration>
+
+
