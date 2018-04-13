@@ -20,6 +20,7 @@ MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "double":"Double",
         "date":"Date",
         "datetime":"Date",
+        "decimal":"BigDecimal",
         "text":"String",
     }
     for(let table of tables){

@@ -6,6 +6,8 @@ import com.value.mybatis.Pagination;
 
 import java.util.List;
 import java.util.Map;
+import java.math.BigDecimal;
+import java.util.Date;
 
 public class ${table.upperCamelName}VO extends BaseVO{
     <%table.fieldArray.filter(function(field){return !field.ignore}).forEach(function(field){%>
