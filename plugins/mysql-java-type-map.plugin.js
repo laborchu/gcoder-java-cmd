@@ -26,9 +26,10 @@ MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
     for(let table of tables){
         table.prefix = table.tableName.split("_")[0];
         for(let field of table.fieldArray){
-            field.javaType = tsTypeMap[field.fieldType];
-            if(!field.tsType){
-                console.log(`${field.fieldType} not map tsType`);
+            let fieldType = field.fieldType.replace(/\(\d+,\d\)/,"");
+            field.javaType = tsTypeMap[fieldType];
+            if(!field.javaType){
+                console.log(`${field.fieldType} not map javaType`);
             }
         }
     }
