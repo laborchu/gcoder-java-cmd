@@ -20,7 +20,7 @@
         )
         VALUES(
             <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            `${field.lowerCamelName}`<%if(index!=table.fieldArray.length-1){%>,<%}%><%})%>
+            #{${field.lowerCamelName}}<%if(index!=table.fieldArray.length-1){%>,<%}%><%})%>
         )
     ]]>
     </insert>
