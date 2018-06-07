@@ -8,7 +8,6 @@ var MysqlJavaTypeMapFilterPlugin = module.exports = gcoder.Plugin.extend({
 
 MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
     MysqlJavaTypeMapFilterPlugin.__super__.do();
-    let splitChat = config.splitChat || "_";
     let tsTypeMap = {
         "int":"Long",
         "tinyint":"Integer",
@@ -24,6 +23,12 @@ MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "text":"String",
     }
     for(let table of tables){
+        let splitArray = table.tableName.split("_");
+        let abbr = "";
+        for(let splitStr of splitArray){
+            abbr+=splitStr.substr(0,1);
+        }
+        table.abbr = abbr;
         table.prefix = table.tableName.split("_")[0];
         for(let field of table.fieldArray){
             let fieldType = field.fieldType.replace(/\(\d+,\d\)/,"");
