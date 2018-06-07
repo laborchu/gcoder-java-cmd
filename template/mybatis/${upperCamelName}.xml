@@ -5,7 +5,7 @@
 <mapper namespace="${table.upperCamelName}">
 
     <sql id="${table.lowerCamelName}JoinMap">
-        <%table.fieldArray.forEach(function(field){%>,${field.fieldName} as ${table.abbr}${field.fieldName}<%})%>
+        <%table.fieldArray.forEach(function(field){%>,${field.fieldName} as ${table.abbr}.${field.fieldName}<%})%>
         bgc.name as bgc_name,bgc.parent_id as bgc_parent_id
     </sql>
 
