@@ -5,8 +5,8 @@
 <mapper namespace="${table.upperCamelName}">
 
     <sql id="${table.lowerCamelName}JoinMap">
-        <%table.fieldArray.forEach(function(field){%>
-        ,${field.fieldName} as ${table.abbr}.${field.fieldName}<%})%>
+        <%table.fieldArray.forEach(function(field){%>,${table.abbr}.${field.fieldName} as ${table.abbr}_${field.fieldName}
+        <%})%>
     </sql>
 
     <resultMap id="${table.lowerCamelName}Result" type="${table.lowerCamelName}VO">
