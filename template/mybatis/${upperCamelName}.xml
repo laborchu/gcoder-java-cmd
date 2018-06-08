@@ -35,7 +35,7 @@
         update `${table.tableName}`
         SET
            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            `${field.fieldName}`=#{${field.lowerCamelName}}<%if(index!=table.fieldArray.length-1){%>,<%}%><%})%>
+            <if test="${field.lowerCamelName}!=null">`${field.fieldName}`=#{${field.lowerCamelName}}</if>><%if(index!=table.fieldArray.length-1){%>,<%}%><%})%>
         WHERE
           id=#{id}
     </update>
