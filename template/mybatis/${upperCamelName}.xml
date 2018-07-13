@@ -34,8 +34,10 @@
     <update id="update${table.upperCamelName}" parameterType="${table.lowerCamelName}VO">
         update `${table.tableName}`
         SET
+            <trim suffixOverrides=",">
            <%table.fieldArray.filter(function(field){return !field.sqIgnore}).forEach(function(field,index){%>
-            <if test="${field.lowerCamelName}!=null">`${field.fieldName}`=#{${field.lowerCamelName}}<%if(index!=table.fieldArray.length-1){%>,</if><%}%><%})%>
+            <if test="${field.lowerCamelName}!=null">`${field.fieldName}`=#{${field.lowerCamelName}},</if><%}})%>
+            </trim>
         WHERE
           id=#{id}
     </update>
