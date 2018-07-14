@@ -20,12 +20,12 @@ public class ${table.upperCamelName}Service implements I${table.upperCamelName}S
     }
 
     @Override
-    public List<${table.upperCamelName}VO> load(Map params){
+    public List<${table.upperCamelName}VO> list(Map params){
         return this.daoRouter.query("${table.upperCamelName}.load${table.upperCamelName}",params);
     }
 
     @Override
-    public List<${table.upperCamelName}VO> loadForPage(Pagination pagination) {
+    public List<${table.upperCamelName}VO> listForPage(Pagination pagination) {
         return this.daoRouter.query("${table.upperCamelName}.load${table.upperCamelName}ForPage",pagination);
     }
 

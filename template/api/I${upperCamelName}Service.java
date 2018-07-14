@@ -10,9 +10,9 @@ public interface I${table.upperCamelName}Service {
 
     ${table.upperCamelName}VO get(Map params);
 
-    List<${table.upperCamelName}VO> load(Map params);
+    List<${table.upperCamelName}VO> list(Map params);
 
-    List<${table.upperCamelName}VO> loadForPage(Pagination pagination);
+    List<${table.upperCamelName}VO> listForPage(Pagination pagination);
 
     void insert(${table.upperCamelName}VO ${table.lowerCamelName}VO);
 

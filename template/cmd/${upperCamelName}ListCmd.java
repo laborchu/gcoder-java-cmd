@@ -22,7 +22,7 @@ public class ${table.upperCamelName}ListCmd extends ACmd {
 
         HashMap params = super.getData(sign, HashMap.class);
         List<${table.upperCamelName}VO> ${table.lowerCamelName}List = this.${table.lowerCamelName}Service.load(params);
-        respSign.setSource(super.getSource(${table.lowerCamelName}List));
+        respSign.setSource(super.getSource(${table.lowerCamelName}List,sign));
         return respSign;
     }
 
