@@ -10,7 +10,6 @@ MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
     MysqlJavaTypeMapFilterPlugin.__super__.do();
     let tsTypeMap = {
         "int":"Long",
-        "long":"Long",
         "tinyint":"Integer",
         "smallint":"Integer",
         "bigint":"Long",
