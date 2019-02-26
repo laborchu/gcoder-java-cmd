@@ -13,14 +13,21 @@ MysqlJavaTypeMapFilterPlugin.prototype.do = function (tables,config) {
         "tinyint":"Integer",
         "smallint":"Integer",
         "bigint":"Long",
+        "mediumint":"Long",
         "int unsigned":"Long",
-        "varchar":"String",
         "float":"Float",
         "double":"Double",
+        "decimal":"BigDecimal",
         "date":"Date",
         "datetime":"Date",
-        "decimal":"BigDecimal",
+        "timestamp":"Date",
+        "char":"String",
+        "varchar":"String",
         "text":"String",
+        "longtext":"String",
+        "tinytext":"String",
+        "blob":"byte[]",
+        "bit":"Boolean",
     }
     for(let table of tables){
         let splitArray = table.tableName.split("_");
