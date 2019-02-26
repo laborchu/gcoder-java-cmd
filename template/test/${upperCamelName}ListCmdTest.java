@@ -11,10 +11,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
 
     @InjectMocks
@@ -36,7 +32,7 @@ public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_APP_SCOPE, CmdCode.${table.upperTableName}_LIST)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeApp(null, sign);
+        this.${table.lowerCamelName}ListCmd.executeApp(null, sign);
     }
 
     @Test
@@ -44,7 +40,7 @@ public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_SERVER_SCOPE, CmdCode.${table.upperTableName}_LIST)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeServer(null, sign);
+        this.${table.lowerCamelName}ListCmd.executeServer(null, sign);
     }
 
     @Test
@@ -52,7 +48,7 @@ public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(CmdCode.${table.upperTableName}_LIST)
                 .build();
-        this.mchMerchantCountryPatchCmd.execute(null, sign);
+        this.${table.lowerCamelName}ListCmd.execute(null, sign);
     }
 
     @Test
@@ -60,7 +56,7 @@ public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_MOP_SCOPE, CmdCode.${table.upperTableName}_LIST)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeMop(null, sign);
+        this.${table.lowerCamelName}ListCmd.executeMop(null, sign);
     }
 
     @Test
@@ -68,6 +64,6 @@ public class ${table.upperCamelName}ListCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(CmdCode.${table.upperTableName}_LIST)
                 .build();
-        this.mchMerchantCountryPatchCmd.verify(null, sign);
+        this.${table.lowerCamelName}ListCmd.verify(null, sign);
     }
 }

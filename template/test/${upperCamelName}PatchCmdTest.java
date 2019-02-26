@@ -11,10 +11,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
 
     @InjectMocks
@@ -36,7 +32,7 @@ public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_APP_SCOPE, CmdCode.${table.upperTableName}_PATCH)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeApp(null, sign);
+        this.${table.lowerCamelName}PatchCmd.executeApp(null, sign);
     }
 
     @Test
@@ -44,7 +40,7 @@ public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_SERVER_SCOPE, CmdCode.${table.upperTableName}_PATCH)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeServer(null, sign);
+        this.${table.lowerCamelName}PatchCmd.executeServer(null, sign);
     }
 
     @Test
@@ -52,7 +48,7 @@ public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(CmdCode.${table.upperTableName}_PATCH)
                 .build();
-        this.mchMerchantCountryPatchCmd.execute(null, sign);
+        this.${table.lowerCamelName}PatchCmd.execute(null, sign);
     }
 
     @Test
@@ -60,7 +56,7 @@ public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(SysConstants.CMD_MOP_SCOPE, CmdCode.${table.upperTableName}_PATCH)
                 .build();
-        this.mchMerchantCountryPatchCmd.executeMop(null, sign);
+        this.${table.lowerCamelName}PatchCmd.executeMop(null, sign);
     }
 
     @Test
@@ -68,6 +64,6 @@ public class ${table.upperCamelName}PatchCmdTest extends ACmdTest {
         CmdSign sign = CmdSign.Builder.newBuild(null)
                 .setCmdCode(CmdCode.${table.upperTableName}_PATCH)
                 .build();
-        this.mchMerchantCountryPatchCmd.verify(null, sign);
+        this.${table.lowerCamelName}PatchCmd.verify(null, sign);
     }
 }
