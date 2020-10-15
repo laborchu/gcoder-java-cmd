@@ -1,6 +1,6 @@
 package ${config.java.package.service}.${table.prefix};
 
-import ${config.java.package.vo}.${table.prefix}.${table.upperCamelName}VO;
+import ${config.java.package.bo}.${table.prefix}.${table.upperCamelName}BO;
 import com.value.mybatis.Pagination;
 
 import java.util.List;
@@ -8,16 +8,16 @@ import java.util.Map;
 
 public interface I${table.upperCamelName}Service {
 
-    ${table.upperCamelName}VO get(Map params);
+    ${table.upperCamelName}BO get(Map params);
 
-    List<${table.upperCamelName}VO> list(Map params);
+    List<${table.upperCamelName}BO> list(Map params);
 
-    List<${table.upperCamelName}VO> listForPage(Pagination pagination);
+    List<${table.upperCamelName}BO> listForPage(Pagination pagination);
 
-    void insert(${table.upperCamelName}VO ${table.lowerCamelName}VO);
+    void insert(${table.upperCamelName}BO ${table.lowerCamelName}BO);
 
-    void update(${table.upperCamelName}VO ${table.lowerCamelName}VO);
+    void update(${table.upperCamelName}BO ${table.lowerCamelName}BO);
 
-    void delete(${table.upperCamelName}VO ${table.lowerCamelName}VO);
+    void delete(${table.upperCamelName}BO ${table.lowerCamelName}BO);
 
 }
